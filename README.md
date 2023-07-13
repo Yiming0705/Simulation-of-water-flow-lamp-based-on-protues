@@ -5,20 +5,16 @@
 #include <iostream>
 #include <unistd.h>
 #include <wiringPi.h>
-
 #define LED_PIN 0
-
 int main() {
     wiringPiSetup();
     pinMode(LED_PIN, OUTPUT);
-    
     while (true) {
         digitalWrite(LED_PIN, HIGH);
         usleep(500000);  // 500ms延迟
         digitalWrite(LED_PIN, LOW);
         usleep(500000);  // 500ms延迟
     }
-    
     return 0;
 }
 这个示例代码使用了wiringPi库来控制GPIO，并通过GPIO 0控制LED灯的亮灭。程序会循环地将LED灯点亮和熄灭，并在两次操作之间延迟500ms。
