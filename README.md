@@ -5,18 +5,24 @@
 #include <iostream>
 #include <unistd.h>
 #include <wiringPi.h>
+
 #define LED_PIN 0
+
 int main() {
     wiringPiSetup();
     pinMode(LED_PIN, OUTPUT);
+    
     while (true) {
         digitalWrite(LED_PIN, HIGH);
         usleep(500000);  // 500ms延迟
         digitalWrite(LED_PIN, LOW);
         usleep(500000);  // 500ms延迟
     }
+    
     return 0;
 }
+
+
 这个示例代码使用了wiringPi库来控制GPIO，并通过GPIO 0控制LED灯的亮灭。程序会循环地将LED灯点亮和熄灭，并在两次操作之间延迟500ms。
 接下来，你需要在Proteus中创建一个仿真环境来测试你的代码。你可以使用Proteus提供的电路元件来模拟LED灯和GPIO接口。以下是一个简单的步骤：
 打开Proteus软件，并创建一个新的工程。
